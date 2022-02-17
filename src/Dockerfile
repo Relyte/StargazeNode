@@ -9,12 +9,12 @@ RUN apt-get update && \
 FROM base as build
 RUN git clone https://github.com/public-awesome/stargaze /root/stargaze
 WORKDIR /root/stargaze
-RUN git checkout v2.0.0
+RUN git checkout v2.0.1
 RUN make install
 
 RUN git clone https://github.com/cosmos/cosmos-sdk /root/cosmos-sdk
 WORKDIR /root/cosmos-sdk
-RUN git checkout v0.42.9
+RUN git checkout v0.42.11
 WORKDIR /root/cosmos-sdk/cosmovisor
 ENV HOME=/root
 RUN make cosmovisor
